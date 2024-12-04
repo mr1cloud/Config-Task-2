@@ -8,8 +8,6 @@ from mermaid.graph import Graph
 
 
 def get_commit_dependencies(repo_path: str, date_str: str) -> dict:
-    date_limit = datetime.strptime(date_str, "%Y-%m-%d")
-
     git_log_command = [
         'git', '-C', repo_path, 'log', '--pretty=format:%H %ct %an %s', '--since', date_str
     ]
