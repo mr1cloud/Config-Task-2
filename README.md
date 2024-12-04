@@ -22,6 +22,9 @@ def test_get_commit_dependencies(self):
     self.assertIn('406d18d010dd618a3e32f4cf7ad2e8d8a4324a44', dependencies)
     self.assertIn('01f14b4159f512481c53a1ef8af143f3c293f45b', dependencies)
 ```
+### Результат:
+![image](https://github.com/user-attachments/assets/f0012471-61e3-4b2e-9947-a8ed2341e982)
+
 
 ### 2) Проверяет, что функция корректно формирует граф в формате Mermaid на основе данных о зависимостях.
 ```python
@@ -33,6 +36,9 @@ def test_generate_mermaid_graph(self):
     self.assertIn('406d18d', graph)
     self.assertIn('01f14b4', graph)
 ```
+### Результат:
+![image](https://github.com/user-attachments/assets/46601ebc-0800-4b69-b86d-9c6516cc1c39)
+
 
 ### 3) Проверяет корректность обработки случая, когда для заданной даты нет подходящих коммитов.
 ```python
@@ -41,6 +47,9 @@ def test_generate_mermaid_graph_empty(self):
     graph = generate_mermaid_graph(dependencies=dependencies)
     self.assertEqual(graph, 'graph TD\n')
 ```
+### Результат:
+![image](https://github.com/user-attachments/assets/2e4ea4a5-e50e-4300-91a8-403a77e4094b)
 
 
 ## Результаты тестирование:
+![image](https://github.com/user-attachments/assets/b1bcec07-5e43-42fd-a738-b98f2430dbaf)
