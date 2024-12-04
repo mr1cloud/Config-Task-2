@@ -1,0 +1,13 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[user]
+	email = maxim@examplpe.com
+	name = Maxim
+[remote "origin"]
+	url = ..\\server\\
+	fetch = +refs/heads/*:refs/remotes/origin/*
