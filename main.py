@@ -8,6 +8,7 @@ from mermaid.graph import Graph
 
 
 def get_commit_dependencies(repo_path: str, date_str: str) -> dict:
+    """Получение зависимостей коммитов в репозитории."""
     git_log_command = [
         'git', '-C', repo_path, 'log', '--pretty=format:%H %ct %an %s', '--since', date_str
     ]
@@ -38,6 +39,7 @@ def get_commit_dependencies(repo_path: str, date_str: str) -> dict:
 
 
 def generate_mermaid_graph(dependencies):
+    """Генерация Mermaid графа зависимостей коммитов."""
     graph = "graph TD\n"
     sorted_commits = list(dependencies.keys())
 
@@ -57,12 +59,14 @@ def generate_mermaid_graph(dependencies):
 
 
 def save_mermaid_graph(graph, output_path):
+    """Сохранение Mermaid графа в файл."""
     with open(output_path, 'w') as f:
         f.write(graph)
     print(f"Mermaid graph saved to {output_path}")
 
 
 def convert_mermaid_to_png(graph_data: str, output_image_path: str):
+    """Конвертация Mermaid графа в изображение PNG."""
     sequence = Graph(title="Git Graph", script=graph_data)
     render = md.Mermaid(sequence)
     render.to_png(output_image_path)
