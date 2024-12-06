@@ -1,21 +1,72 @@
 graph TD
-    092270d(["`
-    Commit 092270d:
-    Add Maxim author to README.md file.
-    Maxim 2024-11-07 11:37:10:
-    README.md
+    08d78a2(["`
+    Commit 08d78a2:
+    Add script to visualize git commit dependencies as a Mermaid graph.
+    Maxim Plotnikov <develop.kisa@gmail.com> 1733333381
     `"])
-    406d18d(["`
-    Commit 406d18d:
-    Create README.md
-    Ivan 2024-11-07 11:35:41:
-    README.md
+    7670f0d --> 08d78a2
+    16acffc(["`
+    Commit 16acffc:
+    Remove unused import of os module from main.py.
+    Maxim Plotnikov <develop.kisa@gmail.com> 1733430570
     `"])
-    092270d --> 406d18d
-    01f14b4(["`
-    Commit 01f14b4:
-    First commit.
-    Maxim 2024-11-07 11:33:37:
-    No changes
+    195271e --> 16acffc
+    195271e(["`
+    Commit 195271e:
+    Update README.md
+    Maxim Plotnikov <51321197+mr1cloud@users.noreply.github.com> 1733352680
     `"])
-    406d18d --> 01f14b4
+    3855786 --> 195271e
+    1f8c54a(["`
+    Commit 1f8c54a:
+    Merge pull request #2 from mr1cloud/unit-tests
+
+Created testing class by python unit testing
+    Maxim Plotnikov <51321197+mr1cloud@users.noreply.github.com> 1733351621
+    `"])
+    2a79789 --> 1f8c54a
+    890c6d0 --> 1f8c54a
+    2a79789(["`
+    Commit 2a79789:
+    Merge pull request #1 from mr1cloud/create-git-reader
+
+Create git reade
+    Maxim Plotnikov <51321197+mr1cloud@users.noreply.github.com> 1733350632
+    `"])
+    7670f0d --> 2a79789
+    bf121a5 --> 2a79789
+    322eff3(["`
+    Commit 322eff3:
+    Add README for Git dependency visualizer tool.
+    Maxim Plotnikov <develop.kisa@gmail.com> 1733352414
+    `"])
+    890c6d0 --> 322eff3
+    3855786(["`
+    Commit 3855786:
+    Add README for Git dependency visualizer tool.
+    Maxim Plotnikov <develop.kisa@gmail.com> 1733352466
+    `"])
+    1f8c54a --> 3855786
+    7670f0d(["`
+    Commit 7670f0d:
+    Init commit.
+    Maxim Plotnikov <develop.kisa@gmail.com> 1733324722
+    `"])
+    890c6d0(["`
+    Commit 890c6d0:
+    Add unit tests for main functions.
+    Maxim Plotnikov <develop.kisa@gmail.com> 1733351578
+    `"])
+    2a79789 --> 890c6d0
+    9b92134(["`
+    Commit 9b92134:
+    Remove unused date_limit variable from get_commit_dependencies function.
+    Maxim Plotnikov <develop.kisa@gmail.com> 1733333449
+    `"])
+    08d78a2 --> 9b92134
+    bf121a5(["`
+    Commit bf121a5:
+    Add docstrings for commit dependency functions.
+    Maxim Plotnikov <develop.kisa@gmail.com> 1733333714
+    `"])
+    9b92134 --> bf121a5
