@@ -61,15 +61,18 @@ def get_commits_files(repo_path: str) -> dict:
         for file in files:
             file_path = Path(root) / file
             file_data = file_path.read_bytes()
-            data = zlib.decompress(file_data).decode('utf-8', errors='ignore')
-            if 'commit' in data:
-                commit_hash = root[-2:] + file_path.name
-                parsed_data = parse_commit_data(data)
-                if parsed_data:
-                    commit_files[commit_hash] = {
-                        "path": file_path,
-                        "data": parse_commit_data(data)
-                    }
+            try:
+                data = zlib.decompress(file_data).decode(encoding='ascii', errors='ignore')
+                if 'commit' in data:
+                    commit_hash = root[-2:] + file_path.name
+                    parsed_data = parse_commit_data(data)
+                    if parsed_data:
+                        commit_files[commit_hash] = {
+                            "path": file_path,
+                            "data": parse_commit_data(data)
+                        }
+            except zlib.error as error:
+                continue
 
     return commit_files
 
